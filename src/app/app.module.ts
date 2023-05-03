@@ -13,13 +13,13 @@ import { ThemeModule } from '@theme/theme.module';
 import { NgxPermissionsModule } from 'ngx-permissions';
 import { ToastrModule } from 'ngx-toastr';
 import { FormlyConfigModule } from './formly-config.module';
-import { RoutesModule } from './modules/routes.module';
 
 import { appInitializerProviders, BASE_URL, httpInterceptorProviders } from '@core';
 import { environment } from '@env/environment';
 
 import { InMemDataService } from '@shared/in-mem/in-mem-data.service';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { RoutesModule } from './routes/routes.module';
 
 // Required for AOT compilation
 export function TranslateHttpLoaderFactory(http: HttpClient) {

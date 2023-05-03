@@ -2,7 +2,8 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DateAdapter } from '@angular/material/core';
 import { TranslateService } from '@ngx-translate/core';
-import { ControlsOf, IProfile } from 'app/modules/profile/interface';
+import { ControlsOf, IProfile } from 'app/routes/profile/interface';
+
 import { Subscription } from 'rxjs';
 
 @Component({
