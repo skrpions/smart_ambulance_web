@@ -11,6 +11,12 @@
       }
     },
     {
+      "route": "drivers",
+      "name": "drivers",
+      "type": "link",
+      "icon": "people"
+    },
+    {
       "route": "design",
       "name": "design",
       "type": "sub",

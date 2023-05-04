@@ -20,11 +20,17 @@ import { environment } from '@env/environment';
 import { InMemDataService } from '@shared/in-mem/in-mem-data.service';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { RoutesModule } from './routes/routes.module';
+import { DriverApplication } from './routes/drivers/application/driver-application';
+import { DriverInfrastructure } from './routes/drivers/infrastructure/driver-infrastructure';
 
 // Required for AOT compilation
 export function TranslateHttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
+
+// Declaron constantes para los providers
+const application = [DriverApplication];
+const infrastructure = [DriverInfrastructure];
 
 @NgModule({
   declarations: [AppComponent],
@@ -56,6 +62,8 @@ export function TranslateHttpLoaderFactory(http: HttpClient) {
     { provide: BASE_URL, useValue: environment.baseUrl },
     httpInterceptorProviders,
     appInitializerProviders,
+    ...application,
+    ...infrastructure,
   ],
   bootstrap: [AppComponent],
 })
