@@ -1,7 +1,8 @@
-import { Inject } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { StorageRepository } from '../domain/storage-repository';
 import { StorageInfrastructure } from '../infrastructure/storage-infrastructure';
 
+@Injectable()
 export class StorageApplication {
   constructor(@Inject(StorageInfrastructure) private storageRepository: StorageRepository) {}
 

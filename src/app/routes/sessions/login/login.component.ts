@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '@core/authentication';
+import { AuthApplication } from 'app/routes/auth/application/auth-application';
+import { AuthFactory } from 'app/routes/auth/domain/auth-factory';
 import { filter } from 'rxjs/operators';
 
 type VisibleInputPassword = 'password' | 'text';
@@ -17,7 +19,12 @@ export class LoginComponent {
   visiblePassword = false;
   loginForm!: FormGroup;
 
-  constructor(private fb: FormBuilder, private router: Router, private auth: AuthService) {
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private auth: AuthService,
+    private authApplication: AuthApplication
+  ) {
     this.loginForm = this.fb.nonNullable.group({
       username: ['ng-matero', [Validators.required]],
       password: ['ng-matero', [Validators.required]],
@@ -38,6 +45,10 @@ export class LoginComponent {
   }
 
   login() {
+    //TODO: Eliminar este login y todo lo relacionado a el cuando finalice el curso de angular 14
+    // Esto es solo para ensayar interceptors, storage, guards
+    this.loginAppAmbulance();
+
     this.isSubmitting = true;
 
     this.auth
@@ -58,5 +69,15 @@ export class LoginComponent {
           this.isSubmitting = false;
         },
       });
+  }
+
+  private loginAppAmbulance(): void {
+    const credentials = {
+      correo: 'sergio@correo.com',
+      password: '123',
+    };
+    const auth = AuthFactory.create(credentials.correo, credentials.password);
+
+    this.authApplication.login(auth);
   }
 }

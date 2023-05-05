@@ -22,6 +22,10 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { RoutesModule } from './routes/routes.module';
 import { DriverApplication } from './routes/drivers/application/driver-application';
 import { DriverInfrastructure } from './routes/drivers/infrastructure/driver-infrastructure';
+import { AuthApplication } from './routes/auth/application/auth-application';
+import { StorageApplication } from './routes/auth/application/storage-application';
+import { AuthInfrastructure } from './routes/auth/infrastructure/auth-infrastructure';
+import { StorageInfrastructure } from './routes/auth/infrastructure/storage-infrastructure';
 
 // Required for AOT compilation
 export function TranslateHttpLoaderFactory(http: HttpClient) {
@@ -29,8 +33,8 @@ export function TranslateHttpLoaderFactory(http: HttpClient) {
 }
 
 // Declaron constantes para los providers
-const application = [DriverApplication];
-const infrastructure = [DriverInfrastructure];
+const application = [DriverApplication, AuthApplication, StorageApplication];
+const infrastructure = [DriverInfrastructure, AuthInfrastructure, StorageInfrastructure];
 
 @NgModule({
   declarations: [AppComponent],
