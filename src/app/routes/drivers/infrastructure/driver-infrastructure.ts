@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { environment } from '@env/environment';
 import { Observable } from 'rxjs';
 import { Driver } from '../domain/driver';
+import { StorageApplication } from 'app/routes/auth/application/storage-application';
 
 export interface ResultPage<Entity> {
   records: Entity[];
@@ -10,11 +11,13 @@ export interface ResultPage<Entity> {
 }
 @Injectable()
 export class DriverInfrastructure {
-  private accessToken =
-    'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2ODMyNTk3NzcsImV4cCI6MTY4MzI2MDM3NywibmFtZSI6IlNlcmdpbyBIaWRhbGdvIiwiZW1haWwiOiJzZXJnaW9AY29ycmVvLmNvbSIsInJvbGVzIjpbIkFETUlOIiwiT1BFUkFUT1IiXX0.Hh5R3y3tKeoL6tUUJQt7n837pY-TwOVFn5yYVKCEaOc';
+  private accessToken = this.storageApplication.getField('accessToken-test');
+  /* private accessToken =
+    'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2ODMyNTk3NzcsImV4cCI6MTY4MzI2MDM3NywibmFtZSI6IlNlcmdpbyBIaWRhbGdvIiwiZW1haWwiOiJzZXJnaW9AY29ycmVvLmNvbSIsInJvbGVzIjpbIkFETUlOIiwiT1BFUkFUT1IiXX0.Hh5R3y3tKeoL6tUUJQt7n837pY-TwOVFn5yYVKCEaOc'; */
   //private accessToken = this.storageApplication.getField('accessToken-test');
   constructor(
-    private readonly http: HttpClient //private readonly storageApplication: StorageApplication
+    private readonly http: HttpClient,
+    private readonly storageApplication: StorageApplication
   ) {}
 
   list(): Observable<Driver[]> {
