@@ -12,6 +12,7 @@ import { BooleanInput, coerceBooleanProperty } from '@angular/cdk/coercion';
 export class PageHeaderComponent implements OnInit {
   @HostBinding('class') class = 'matero-page-header';
 
+  @Input() icon = '';
   @Input() title = '';
   @Input() subtitle = '';
   @Input() nav: string[] = [];

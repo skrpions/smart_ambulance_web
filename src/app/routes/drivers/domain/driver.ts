@@ -11,8 +11,8 @@ export type DriverUpdate = Partial<DriverEssentials>;
 
 export class Driver {
   private readonly id!: number;
-  private nombre!: string;
-  private activo!: boolean;
+  public nombre!: string;
+  public activo!: boolean;
 
   constructor(properties: DriverProperties) {
     Object.assign(this, properties);
