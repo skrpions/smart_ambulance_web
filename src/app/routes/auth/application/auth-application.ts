@@ -5,7 +5,8 @@ import { Auth } from '../domain/auth';
 import { StorageRepository } from '../domain/storage-repository';
 
 import { Observable } from 'rxjs';
-import { AuthRepository, ITokens } from '../domain/auth-repository';
+import { ITokens } from '../domain/entities/tokens-entity';
+import { AuthRepository } from '../domain/repositories/auth-repository';
 import { AuthInfrastructure } from '../infrastructure/auth-infrastructure';
 import { StorageInfrastructure } from '../infrastructure/storage-infrastructure';
 

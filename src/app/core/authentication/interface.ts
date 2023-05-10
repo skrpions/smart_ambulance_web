@@ -9,12 +9,14 @@ export interface User {
   permissions?: any[];
 }
 
-export interface Token {
-  [prop: string]: any;
-
-  access_token: string;
-  token_type?: string;
-  expires_in?: number;
-  exp?: number;
-  refresh_token?: string;
+interface TokenEssentials {
+  accessToken: string;
 }
+interface TokenOptionals {
+  [prop: string]: any;
+  token_type: string;
+  expires_in: number;
+  exp: number;
+  refreshToken: string;
+}
+export type Token = Required<TokenEssentials> & Partial<TokenOptionals>;

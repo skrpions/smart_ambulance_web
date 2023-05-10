@@ -26,6 +26,8 @@ export class LoginComponent {
     private authApplication: AuthApplication
   ) {
     this.loginForm = this.fb.nonNullable.group({
+      //username: ['sergio@correo.com', [Validators.required]],
+      //password: ['123', [Validators.required]],
       username: ['ng-matero', [Validators.required]],
       password: ['ng-matero', [Validators.required]],
       rememberMe: [false],
@@ -47,7 +49,7 @@ export class LoginComponent {
   login() {
     //TODO: Eliminar este login y todo lo relacionado a el cuando finalice el curso de angular 14
     // Esto es solo para ensayar interceptors, storage, guards
-    this.loginAppAmbulance();
+    //this.loginAppAmbulance();
 
     this.isSubmitting = true;
 
@@ -74,7 +76,7 @@ export class LoginComponent {
   private loginAppAmbulance(): void {
     const credentials = {
       correo: 'sergio@correo.com',
-      password: '123',
+      password: '12345',
     };
     const auth = AuthFactory.create(credentials.correo, credentials.password);
 

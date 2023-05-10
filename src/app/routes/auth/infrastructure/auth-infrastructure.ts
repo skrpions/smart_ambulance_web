@@ -4,7 +4,8 @@ import { Observable } from 'rxjs';
 import { Auth } from '../domain/auth';
 
 import { environment } from '@env/environment';
-import { AuthRepository, ITokens } from '../domain/auth-repository';
+import { AuthRepository } from '../domain/repositories/auth-repository';
+import { ITokens } from '../domain/entities/tokens-entity';
 
 @Injectable()
 export class AuthInfrastructure implements AuthRepository {
