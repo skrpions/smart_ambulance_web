@@ -1,6 +1,7 @@
 {
   "menu": {
     "dashboard": "Dashboard",
+    "students": "Students",
     "drivers": "Drivers",
     "design": "Design",
     "design.colors": "Color System",
@@ -142,5 +143,32 @@
     "confirm_delete": "Confirm delete?",
     "ok": "Ok",
     "close": "Close"
+  },
+  "titles": {
+    "projects": "Projects",
+    "medics": "Medics",
+    "students": "Students",
+    "elimination": "Elimination"
+  },
+  "messages": {
+    "added": "Added",
+    "updated": "Updated",
+    "delete": "Delete"
+  },
+  "status_messages": {
+    "added": "Successful Creation",
+    "updated": "Successful Update",
+    "deleted": "Successful Deletion",
+    "error": "Sorry, try again later",
+    "info": "Here is something that you should know",
+    "confirmation_question": "Do you really want to continue?"
+  },
+    "buttons":{
+    "yes": "Yes",
+    "no": "No",
+    "new": "New",
+    "save": "Save",
+    "close": "Close",
+    "export_data": "Export Data"
   }
 }

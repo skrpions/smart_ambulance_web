@@ -26,6 +26,7 @@ import { TableComponent } from './components/table/table.component';
 import { DisableControlDirective } from './directives/disable-control.directive';
 import { SafeUrlPipe } from './pipes/safe-url.pipe';
 import { ToObservablePipe } from './pipes/to-observable.pipe';
+import { NgOptimizedImage } from '@angular/common';
 
 const MODULES: any[] = [
   CommonModule,
@@ -43,6 +44,7 @@ const MODULES: any[] = [
   NgxPermissionsModule,
   ToastrModule,
   TranslateModule,
+  NgOptimizedImage,
 ];
 const COMPONENTS: any[] = [
   BreadcrumbComponent,

@@ -62,6 +62,10 @@ const routes: Routes = [
         loadChildren: () => import('./drivers/drivers.module').then(m => m.DriversModule),
       },
       { path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
+      {
+        path: 'students',
+        loadChildren: () => import('./students/students.module').then(m => m.StudentsModule),
+      },
     ],
   },
   {

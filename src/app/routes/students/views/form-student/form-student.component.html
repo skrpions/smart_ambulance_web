@@ -1,0 +1,104 @@
+<mat-toolbar align="center" class="space-between" color="primary">
+  <span class=" centered">
+    <mat-icon>{{icon_header}}</mat-icon>
+    {{title_header}}
+  </span>
+  <button mat-icon-button mat-dialog-close>
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-dialog-content>
+
+  <form [formGroup]="form">
+
+    <div class="row">
+
+      <!-- Foto -->
+      <div class="col-md-4">
+        <img [ngSrc]="image" width="230" height="290" priority
+             sizes="(max-width: 768px) 100vw, 50vw">
+        <!-- <app-photo></app-photo> -->
+
+      </div>
+
+      <!-- Names | Usuario | Email -->
+      <div class="col-md-4">
+
+        <mat-form-field appearance="outline">
+          <mat-label>Nombre:</mat-label>
+          <input formControlName="name" type="text" matInput required>
+          <mat-error *ngIf="">El nombre es obligatorio</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Usuario:</mat-label>
+          <input formControlName="username" type="text" matInput required>
+          <mat-error *ngIf="">El usuario es obligatorio</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Email:</mat-label>
+          <input formControlName="email" type="text" matInput required>
+          <mat-error *ngIf="">El email es obligatorio</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Ciudad:</mat-label>
+          <input formControlName="city" type="text" matInput required>
+          <mat-error *ngIf="">La ciudad es obligatoria</mat-error>
+        </mat-form-field>
+
+      </div>
+
+      <!-- Cmp | Dni | Correo -->
+      <div class="col-md-4">
+
+        <mat-form-field appearance="outline">
+          <mat-label>Telefono:</mat-label>
+          <input formControlName="phone" type="text" matInput required>
+          <mat-error *ngIf="">El teléfono es obligatorio</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Web:</mat-label>
+          <input formControlName="website" type="text" matInput required>
+          <mat-error *ngIf="">La web es obligatoria</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Compañia:</mat-label>
+          <input formControlName="company" type="text" matInput required>
+          <mat-error *ngIf="">La compania es obligatoria</mat-error>
+        </mat-form-field>
+
+      </div>
+    </div>
+
+    <div class="row" style="justify-content: flex-end;">
+      <mat-dialog-actions>
+
+        <!-- Save -->
+        <button type="button" mat-raised-button mat-dialog-close
+                color="primary" [disabled]="form.invalid" cdkFocusInitial
+                (click)="save()">
+          <mat-icon>save</mat-icon>
+          Save
+        </button>
+
+        <!-- Close -->
+        <button style="background-color: #212121 !important; color: white; "
+                type="button"
+                mat-raised-button
+                mat-dialog-close>
+          <mat-icon>close</mat-icon>
+          Close
+        </button>
+
+      </mat-dialog-actions>
+    </div>
+
+  </form>
+
+
+</mat-dialog-content>

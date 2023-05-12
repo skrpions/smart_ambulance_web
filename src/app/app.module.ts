@@ -26,6 +26,8 @@ import { AuthApplication } from './routes/auth/application/auth-application';
 import { StorageApplication } from './routes/auth/application/storage-application';
 import { AuthInfrastructure } from './routes/auth/infrastructure/auth-infrastructure';
 import { StorageInfrastructure } from './routes/auth/infrastructure/storage-infrastructure';
+import { StudentApplication } from './routes/students/application/student-application';
+import { StudentInfrastructure } from './routes/students/infrastructure/student-infrastructure';
 
 // Required for AOT compilation
 export function TranslateHttpLoaderFactory(http: HttpClient) {
@@ -33,8 +35,13 @@ export function TranslateHttpLoaderFactory(http: HttpClient) {
 }
 
 // Declaron constantes para los providers
-const application = [DriverApplication, AuthApplication, StorageApplication];
-const infrastructure = [DriverInfrastructure, AuthInfrastructure, StorageInfrastructure];
+const application = [DriverApplication, AuthApplication, StorageApplication, StudentApplication];
+const infrastructure = [
+  DriverInfrastructure,
+  AuthInfrastructure,
+  StorageInfrastructure,
+  StudentInfrastructure,
+];
 
 @NgModule({
   declarations: [AppComponent],

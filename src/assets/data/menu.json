@@ -11,10 +11,16 @@
       }
     },
     {
+      "route": "students",
+      "name": "students",
+      "type": "link",
+      "icon": "school"
+    },
+    {
       "route": "drivers",
       "name": "drivers",
       "type": "link",
-      "icon": "people"
+      "icon": "local_shipping"
     },
     {
       "route": "design",

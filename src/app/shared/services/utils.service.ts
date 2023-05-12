@@ -13,8 +13,19 @@ export class UtilsService {
 
   constructor() {}
 
+  // Add - Edit
+  openForm(componentToOpen: any, modal_width: any = '600px', data: any = null): Observable<any> {
+    const reference: MatDialogRef<any> = this.dialog.open(componentToOpen, {
+      width: modal_width,
+      disableClose: true,
+      data,
+    });
+
+    return reference.afterClosed();
+  }
+
   // Delete
-  /* confirm(message: string[] = []): Observable<any> {
+  confirm(message: string[] = []): Observable<any> {
     const reference: MatDialogRef<ConfirmComponent> = this.dialog.open(ConfirmComponent, {
       disableClose: true,
       width: '400px',
@@ -23,7 +34,7 @@ export class UtilsService {
     if (message.length > 0) reference.componentInstance.messages = message;
 
     return reference.afterClosed();
-  } */
+  }
 
   // Export
   exportDataToExcel<Driver>(
