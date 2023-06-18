@@ -19,13 +19,15 @@ import { environment } from '@env/environment';
 
 import { InMemDataService } from '@shared/in-mem/in-mem-data.service';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { RoutesModule } from './routes/routes.module';
-import { DriverApplication } from './routes/drivers/application/driver-application';
-import { DriverInfrastructure } from './routes/drivers/infrastructure/driver-infrastructure';
 import { AuthApplication } from './routes/auth/application/auth-application';
 import { StorageApplication } from './routes/auth/application/storage-application';
 import { AuthInfrastructure } from './routes/auth/infrastructure/auth-infrastructure';
 import { StorageInfrastructure } from './routes/auth/infrastructure/storage-infrastructure';
+import { DriverApplication } from './routes/drivers/application/driver-application';
+import { DriverInfrastructure } from './routes/drivers/infrastructure/driver-infrastructure';
+import { PlayerApplication } from './routes/players/application/player-application';
+import { PlayerInfrastructure } from './routes/players/infrastructure/player-infrastructure';
+import { RoutesModule } from './routes/routes.module';
 import { StudentApplication } from './routes/students/application/student-application';
 import { StudentInfrastructure } from './routes/students/infrastructure/student-infrastructure';
 
@@ -35,12 +37,19 @@ export function TranslateHttpLoaderFactory(http: HttpClient) {
 }
 
 // Declaron constantes para los providers
-const application = [DriverApplication, AuthApplication, StorageApplication, StudentApplication];
+const application = [
+  DriverApplication,
+  AuthApplication,
+  StorageApplication,
+  StudentApplication,
+  PlayerApplication,
+];
 const infrastructure = [
   DriverInfrastructure,
   AuthInfrastructure,
   StorageInfrastructure,
   StudentInfrastructure,
+  PlayerInfrastructure,
 ];
 
 @NgModule({
